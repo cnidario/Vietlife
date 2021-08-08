@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/background/background_color.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scripts/Tiles.gd" type="Script" id=5]
 [ext_resource path="res://sprites/background/jungle_paralax_bg2.png" type="Texture" id=6]
 [ext_resource path="res://sprites/background/jungle_paralax_bg1.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/GruntEnemy.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "VerticalPlatform"
@@ -270,6 +271,7 @@ shape = SubResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 42, 195 )
+PlayerBullets = NodePath("../Bullets")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -284,3 +286,26 @@ drag_margin_v_enabled = true
 smoothing_enabled = true
 
 [node name="Bullets" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="GruntEnemy" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 105, 198 )
+
+[node name="GruntEnemy2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 23, 127 )
+
+[node name="GruntEnemy3" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 194, 97 )
+
+[node name="GruntEnemy4" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 110, 163 )
+
+[node name="GruntEnemy5" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 23, 38 )
+
+[node name="GruntEnemy6" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 192, 156 )
+
+[node name="GruntEnemy7" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 174, 33 )

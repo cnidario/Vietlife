@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (PackedScene) var Bullet
-onready var PlayerBullets = get_node("../Bullets")
+export (NodePath) var PlayerBullets
 
 const RUN_SPEED = 120
 const JUMP_SPEED = 350
@@ -44,7 +44,7 @@ func gun_facing_direction():
 	elif facing == Facing.LEFT:
 		return Vector2(-1,0)
 func shoot():
-	var bullet_instance = Bullet.instance()
-	PlayerBullets.add_child(bullet_instance)
+	var bullet_instance: Node2D = Bullet.instance()
+	get_node(PlayerBullets).add_child(bullet_instance)
 	bullet_instance.init($GunBarrel.global_position, gun_facing_direction())
 	bullets.append(bullet_instance)

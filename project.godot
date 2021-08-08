@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "GruntEnemy",
+"language": "GDScript",
+"path": "res://Scripts/GruntEnemy.gd"
+} ]
+_global_script_class_icons={
+"GruntEnemy": ""
+}
+
 [application]
 
 config/name="2D Side Platformer"
